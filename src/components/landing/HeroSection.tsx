@@ -25,21 +25,21 @@ const Hero = () => {
                     className={`flex-1 flex justify-center items-start flex-col xl:px-0 sm:px-16 px-6`}
                     ref={parallaxRef}
                 >
-                    <div className="flex flex-row items-center py-[3px] px-[2px] sm:py-[6px] sm:px-4 bg-gradient-to-r from-[#60d3ea] via-blue-200 to-blue-400 rounded-[10px] mb-2">
+                    <div className="flex flex-row items-center py-[3px] px-2 sm:py-[6px] sm:px-4 bg-gradient-to-r from-[#60d3ea] via-blue-200 to-blue-400 rounded-[10px] mb-2">
                         <TbDiscount className="w-8 h-8" />
                         <p
                             className={`font-poppins font-normal text-[14px] sm:text-[18px] leading-[30.8px] ml-2`}
                         >
               <span className="text-black dark:text-white">
-                All-in-one app for
-                  <span className="text-slate-700 dark:text-slate-300"> endless memories</span>{" "}
+
+                  <span className="text-slate-700 dark:text-slate-300"> Endless memories</span>{" "}
                   & convenience
               </span>
                         </p>
                     </div>
 
                     <div className="flex flex-row justify-between items-center w-full">
-                        <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
+                        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
                             Create <span className="bg-gradient-to-r from-[#60d3ea] via-blue-400 to-blue-600 bg-clip-text text-transparent">Endless Memories</span>
                         </h1>
                         <div className="sm:flex hidden md:mr-4 mr-0">
