@@ -21,7 +21,7 @@ function Page() {
     }, [generateEmbedding])
 
     return (
-        <div>Page</div>
+        <div>Pages</div>
     )
 }
 
