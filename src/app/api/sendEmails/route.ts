@@ -12,7 +12,7 @@ export async function GET() {
   const potentialVisitors = [
     { username: "Hash", email: "hashzennn@gmail.com" },
     { username: "Echo", email: "echoinbyte@gmail.com" },
-    { username: "Diwas", email: "diwas.devs@gmail.com" },
+    { username: "Flame", email: "flameo.averest@gmail.com" },
   ];
 
   const result = await sendEmails(event, potentialVisitors);

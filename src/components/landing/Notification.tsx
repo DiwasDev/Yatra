@@ -4,7 +4,6 @@ const notificationImages = [
     "/yatra.svg",
     "/yatra.svg",
 ]
-import { useState } from "react";
 
 const Notification = ({
                           className,
