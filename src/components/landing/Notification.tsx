@@ -53,7 +53,6 @@ const Notification = ({
                                     alt={`Users ${index + 1} - Image`}
                                     // loading="lazy"
                                 />
-                                {/* <Icon className="w-5 h-5"></Icon> */}
                             </li>
                         ))}
                     </ul>
