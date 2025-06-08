@@ -11,7 +11,7 @@ const stats = [{
 }, {
     id: 3,
     title: "Total Market",
-    value: "$617 M+",
+    value: "$617M",
 
 }];
 

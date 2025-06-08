@@ -1,30 +1,29 @@
 import Image from "next/image";
 
-// Dummy data for Yatra features
 const features = [
     {
         id: 1,
         title: "Booking Insights",
-        text: "See if your hotel booking may cancel. Get instant alternatives.",
+        description: "See if your hotel booking may cancel. Get instant alternatives.",
         iconUrl: "/yatra.svg",
-        backgroundUrl: "/yatra.svg",
-        imageUrl: "/yatra.svg"
+        backgroundUrl: "/features-border/border.svg",
+        imageUrl: "/features-image/hotel-analysis.webp"
     },
     {
         id: 2,
         title: "Events Hosting",
-        text: "Find or host local events and marriages easily.",
+        description: "Find or host local events and marriages easily.",
         iconUrl: "/yatra.svg",
-        backgroundUrl: "/yatra.svg",
-        imageUrl: "/yatra.svg"
+        backgroundUrl: "/features-border/border.svg",
+        imageUrl: "/features-image/events-with-notification.webp"
     },
     {
         id: 3,
         title: "Travel Matchmaking",
-        text: "Connect with travelers sharing your interests.",
+        description: "Connect with travelers sharing your interests.",
         iconUrl: "/yatra.svg",
-        backgroundUrl: "/yatra.svg",
-        imageUrl: "/yatra.svg"
+        backgroundUrl: "/features-border/border.svg",
+        imageUrl: "/features-image/travel-matchmaking.webp"
     },
 ];
 
@@ -32,7 +31,7 @@ const Features = () => {
 	return (
 		<div className={"py-10 lg:py-16 xl:py-20"}>
 			<div className="relative z-[2] flex flex-col justify-center items-center">
-				<h2 className="text-2xl leading-[2.5rem] md:text-3xl md:leading-[2.5rem] lg:text-4xl lg:leading-[3.5rem] xl:text-5xl xl:leading-tight">
+				<h2 className="text-4xl leading-[2.5rem] md:leading-[2.5rem] lg:text-5xl lg:leading-[3.5rem] xl:text-6xl xl:leading-tight text-center">
 					Travel Smarter with Yatra
 				</h2>
 
@@ -51,7 +50,7 @@ const Features = () => {
 										{Item.title}
 									</h5>
 									<p className="font-light text-[0.875rem] leading-6 md:text-base mb-6 text-[#ADA8C3]">
-										{Item.text}
+										{Item.description}
 									</p>
 									<div className="flex items-center mt-auto">
 										<Image
@@ -66,7 +65,7 @@ const Features = () => {
 											// loading="lazy"
 										/>
 										<p className="ml-auto font-code text-xs font-bold uppercase tracking-wider">
-											For 100% Free
+											For 100% Free*
 										</p>
 									</div>
 								</div>
@@ -75,24 +74,21 @@ const Features = () => {
 
 								<div
 									className="absolute inset-0.5"
-									style={{ clipPath: "url(#benefits)" }}
 								>
 									<div className="absolute inset-0 opacity-0 transition-opacity hover:opacity-10">
 										{Item.imageUrl && (
-											// <FaIdeal />
-											// <Item.ImageUrl className="w-[380px] h-[362px]"></Item.ImageUrl>
 											<Image
 												priority
 												src={
 													Item.imageUrl ||
-													"/benefits/image-2.png"
+													"/features-border/border.svg"
 												}
 												width={380}
 												height={362}
 												alt={Item.title}
 												className="w-full h-full object-cover"
 												placeholder="blur"
-												blurDataURL={"/benefits/image-2.png"}
+												blurDataURL={"/features-border/border.svg"}
 												// loading="lazy"
 											/>
 										)}

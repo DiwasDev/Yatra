@@ -39,7 +39,7 @@ const Hero = () => {
                     </div>
 
                     <div className="flex flex-row justify-between items-center w-full">
-                        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
+                        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
                             Create <span className="bg-gradient-to-r from-[#60d3ea] via-blue-400 to-blue-600 bg-clip-text text-transparent">Endless Memories</span>
                         </h1>
                         <div className="sm:flex hidden md:mr-4 mr-0">
