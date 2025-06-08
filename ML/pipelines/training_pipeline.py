@@ -11,7 +11,7 @@ from steps.evaluation import evaluate
 from zenml import pipeline
 
 @pipeline
-def train_pipelined(data_path:str):
+def train_pipeline(data_path:str):
     """
     A training pipeline that ingests data, cleans it, trains a model, and evaluates it.
 
@@ -22,7 +22,7 @@ def train_pipelined(data_path:str):
     df = ingest_df(data_path=data_path)
 
     # Clean the DataFrame
-    cleaned_df = clean_df(df)
+    X_train, X_test, y_train, y_test = clean_df(df)
 
     # Train the model
     model = train_model(df)

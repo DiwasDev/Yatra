@@ -1,8 +1,13 @@
 import logging
+
 import pandas as pd
 import numpy as np
+
 from abc import ABC, abstractmethod
+
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split
+from typing import Tuple
 
 # Strategy Interface
 class DataCleaningStrategy(ABC):
@@ -180,7 +185,7 @@ class CategoricalEncoder(DataCleaningStrategy):
 
             cat_cols = ['type_of_meal', 'room_type', 'market_segment_type']
             df = pd.get_dummies(df, columns=cat_cols, drop_first=True)
-            
+
             # Label encode booking_status
             le = LabelEncoder()
             df['booking_status'] = le.fit_transform(df['booking_status'])
@@ -188,6 +193,36 @@ class CategoricalEncoder(DataCleaningStrategy):
         except Exception as e:
             logging.error(f"Error in CategoricalEncoder: {str(e)}")
             raise
+
+
+class DataDivideStrategy(DataCleaningStrategy):
+    """
+    Concrete strategy for splitting the dataset into training and testing sets.
+    """
+    def clean(self, df: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]:
+        """
+        Split the DataFrame into training and testing sets.
+        Args:
+            df (pd.DataFrame): The DataFrame to split.
+        Returns:
+            Tuple[pd.DataFrame, pd.DataFrame, pd.Series, pd.Series]: X_train, X_test, y_train, y_test.
+        """
+        logging.info("Performing train-test split")
+
+        try:
+
+            X = df.drop(columns=['booking_status'])
+            y = df['booking_status']
+            X_train, X_test, y_train, y_test = train_test_split(
+                X, y, test_size=0.2, random_state=42, stratify=y
+            )
+
+            return X_train, X_test, y_train, y_test
+        
+        except Exception as e:
+            logging.error(f"Error in TrainTestSplitStrategy: {str(e)}")
+            raise
+
 
 # Context Class
 class DataCleaner:
@@ -212,7 +247,11 @@ class DataCleaner:
         """
         logging.info("Starting data cleaning process")
         cleaned_df = df.copy()
+
         for strategy in self.strategies:
             cleaned_df = strategy.clean(cleaned_df)
         logging.info("Data cleaning completed")
+
         return cleaned_df
+    
+
